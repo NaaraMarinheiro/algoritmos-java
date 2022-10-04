@@ -13,13 +13,31 @@ public class Exercicios01 {
 		//exercicio3();
 		//exercicio4();
 		//exercicio5();
-		exercicio6();
+		//exercicio6();
 		//exercicio7();
 		//exercicio8();
 		//exercicio9();
 		//exercicio10();
-		
-		
+		//exercicio11();
+		//exercicio12(); // Pendente 
+		//exercicio13(); // Pendente
+		//exercicio14(); // Pendente
+		//exercicio15();
+		//exercicio16();
+		//exercicio17();
+		//exercicio18();
+		//exercicio19();
+		//exercicio20(); // Pendente /PA
+		//exercicio21(); // Pendente/PG
+		//exercicio22();
+		//exercicio23();
+		//exercicio24();
+		//exercicio25();
+		//exercicio26();
+		//exercicio27();
+		//exercicio28();
+		//exercicio29();
+		//exercicio30();
 	}
 
 /** 1. Elabore um programa que lê o valor das variáveis x, y e z, do tipo int.
@@ -207,10 +225,277 @@ public static void exercicio10() {
 	sc.close();
 }
 
-/**
- * 
+/** Faça um programa que leia dois números inteiros e verifique qual deles é maior.
+ * imprima uma mensagem informando qual deles é maior; 
  */
 public static void exercicio11() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite dois números:");
+	int n1 = sc.nextInt();
+	int n2 = sc.nextInt();
+	
+	if ( n1 > n2) {
+		System.out.println("O meior número é:" + n1);
+	} else {
+		System.out.println("O maior número é:" + n2);
+	}
+	
+	sc.close();;
 	
 }
+/**
+ * Dadas as seguintes informações de um funcionário: matrícula (somente numeros), idade
+ * e o seu salário bruto, considere:
+ * O salário bruto teve um reajuste de 38%;
+ * O funcionário receberá uma gratificação de 20% do salário bruto;
+ * O salário total é descontado em 15%.
+ * Faça um programa para: 1. Imprimir a matrícula; 2. Clacular e imprimir o salário bruto;
+ * 3. Clacular e imprimir o salário liquido.
+ */
+public static void exercicio12() { // NÃO CONSEGUI FAZ 
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Informe a matricula, idade e o salario bruto:");
+	int matricula = sc.nextInt();
+	int idade = sc.nextInt();
+	double salarioBruto = sc.nextDouble();
+
+	double percentualReajuste = (38/100) * salarioBruto;
+	double salarioReajustado =  salarioBruto + percentualReajuste;
+	double gratificacao = (20/100) * salarioReajustado;
+	double salarioBrutoFinal = salarioReajustado + gratificacao;
+	
+	double salarioDescontado = salarioBrutoFinal - ((15/100) * salarioBrutoFinal);
+	
+	System.out.println("Matricula: " + matricula);
+	System.out.println("Salário Bruto: " + salarioBrutoFinal);
+	System.out.println("Salário líquido: " + salarioDescontado);
+
+	sc.close();
+	
+	// NÃO CONSEGUI FAZER O PERCENTUAL FUNCIONAR.
+}
+
+
+/**
+ * Uma companhia de carros paga a seu vendedor um salario de R$ 2.000,00 por mes mais uma comiss˜ao
+de R$ 500,00 para cada carro vendido e mais 5% do valor da venda. Todo mes a companhia prepara
+os seguintes dados para um determinado vendedor: matricula (somente numeros), numero de carros
+vendidos e o valor total das vendas. Elabore um algoritmo para calcular e imprimir o salario do
+vendedor num dado mes.
+ */
+public static void exercicio13() {
+	
+}
+
+/** Numa concessionaria de veiculos, o vendedor recebe mensalmente, um salario fixo mais comiss˜ao, que
+ * e baseada na quantidade e modelo vendido, conforme a tabela abaixo:
+ * Tipo: luxo / Comissão (R$ por veiculo vendido) 2000,00
+ * Tipo: padrão / Comissão (R$ por veiculo vendido) 1000,00
+ * 
+ * Sabendo-se ainda que o vendedor tem um desconto de 8% sobre seu sal´ario bruto para o INSS, fa¸ca
+ * um algoritmo que leia o salario fixo e o n´umero de carros de cada modelo que esse funcion´ario vendeu
+e, calcule e imprima o salario bruto, o desconto para o INSS e o salario liquido desse vendedor.
+ */
+public static void exercicio14() {
+	
+}
+
+/** Elabore um algoritmo que dados dois lados de um triangulo retangulo, 
+ * calcule a respectiva hipotenusa, dado por: h = raiz quadrada de l1² + l2²
+ */
+public static void exercicio15() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite os dois lados de um triângulo retângulo:");
+	double l1 = sc.nextDouble();
+	double l2 = sc.nextDouble();
+	double resultado = Math.sqrt( Math.pow(l1, 2) + Math.pow(l2, 2) );
+	System.out.println("A hipotenusa do triângulo é:" + resultado);
+	sc.close();
+}
+
+/** A convers˜ao de graus Farenheit para Celsius é obtida atraves da formula 
+ * C = 5/9(F - 32). Elabore um algoritmo que receba uma temperatura em Farenheit
+ * e a transforme para graus Celsius
+ */
+public static void exercicio16() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Informe a temperatura em Farenheit:");
+	double tempFarenheit = sc.nextDouble();
+	double tempCelsius =(tempFarenheit - 32)* 5/9 ;
+	System.out.println("A temperatura em Celsiu é:" + tempCelsius);
+	sc.close();
+}
+
+
+/** Construa um algoritmo que leia as dimens˜oes dos lados de um retangulo, 
+ * calcule e imprima a area e perimetro deste retangulo, dados, respectivamente,
+ *  por A = b × h e P = 2b + 2h, onde b é a base e h a altura.
+ */
+public static void exercicio17() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Informe a base e a altura do retangulo:");
+	double b = sc.nextDouble();
+	double h = sc.nextDouble();
+	double area = b * h;
+	double perimetro = (2 * b) + (2 * h);
+	System.out.println("A area e o perimentro do retangulo são:" + area + " e " + perimetro);
+	
+	sc.close();
+}
+
+/** Elabore um algoritmo que leia um numero r, calcule e imprima o comprimento da circunferencia,
+ *  a area do circulo e o volume da esfera de raio r, dados por C = 2 PI r, A = PIr² e
+ *   V = 4/3 pi r³, respectivamente.
+ */
+public static void exercicio18() {
+	Scanner sc = new Scanner(System.in);
+	
+	final double PI = 3.14;
+	System.out.println("Informe um número r");
+	double r = sc.nextDouble();
+	double c = 2 * PI * r;
+	double a = PI * Math.pow(r, 2);
+	double v = 4/3 * PI * Math.pow(r, 3);
+	
+	System.out.printf("c = %f%n a = %f%n v = %f%n", c, a, v );
+
+	sc.close();
+}
+
+/** Construa um algoritmo que leia os valores das bases e altura de um trapezio,
+ *  calcule e imprima o valor da sua area, dada por AT = (b1 + b2) * h / 2. 
+ * 
+ */
+public static void exercicio19() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Informe os valores da base maior, base menor e altura do trapezio:");
+	double b1 = sc.nextDouble();
+	double b2 = sc.nextDouble();
+	double h = sc.nextDouble();
+	double area = ((b1 + b2) * h)/2;
+	System.out.println("A area do trapezio é: " + area);
+	sc.close();
+	
+}
+
+/** Elabore um algoritmo que leia o primeiro termo (a1) de uma Progressão Aritmética (PA),
+ * sua razão r, um número n, e a seguir , calcule e imprima o enésimo termo da PA.
+ * Fórmula geral da PA an = a1 + (n - 1) r 
+ */
+public static void exercicio20() {
+	
+}
+
+/** Desenvolva um algoritmo que leia um número n, o primeiro termo a1, e a razão q de uma
+ * Progressão Geomátrica (PG), calcule e imprima o n-ésimo termo desta PG. 
+ * Fórmula geral da PG : an = a1 x q^n-1
+ */
+public static void exercicio21() {
+	
+}
+
+/** Reescreva as expressões matemáticas abaixo em linguagem Java:
+ * 1. x = (3y / 5y + 7) + 2y
+ * 2. y = (x + 3b) / (2x + c)
+ * 3. y = ( a² + raiz quadrada de 3b) / 5x³
+ * 4. x = y + raiz quadrada de 2b / a + b 
+ * 5. X = A + (B/C)/ D - (E/F)
+ * 6. Y = ((2x² - 3x^x+1)/2) +  ((raiz quadrada de x+ 1)/x)/ 2²
+ */
+public static void exercicio22() {
+
+	double y = 10;
+	double x = 10;
+	double a = 10;
+	double b = 10;
+	double c = 10;
+	double d = 10;
+	double e = 10;
+	double f = 10;
+	
+	double q1 = (3*y)/(5*y + 7) + 2*y;
+	double q2 = (x + 3*b) / (2*x + c);
+	double q3 = (a*a) + Math.sqrt((3 * b))/ 5 * Math.pow(x, 3);
+	double q4 = y + Math.sqrt((2*b)/(a + b));
+	double q5 = (a + (b/c)) / (d - (e/f));
+	double q6 = (     ( (2*Math.pow(x, 2) - 3*Math.pow(x,(x+1)))/2 ) +  
+								+ (Math.sqrt((x+1))/x)    )
+									/ Math.pow(2, x);
+	
+	System.out.printf("%.2f / %.2f / %.2f / %.2f / %.2f / %.2f", q1, q2, q3, q4, q5, q6);
+	
+}
+
+/** Indique o resultado das seguintes expressões:
+ * 1. 2> 3  ----  2. (6<8) || (3>7) ---- 3. 1/2 ----- 4. 1%2 
+ * 5. 1/2.0 ----- 6. (((10/2) % 6) < 5) && (3< (2||2)) -----7. !(2<3)
+ * 8. pow(5,2) + 3  
+ */
+public static void exercicio23() {
+	boolean q1 = 2 > 3;
+	boolean q2 = (6<8)||(3>7);
+	float q3 = 1/2;
+	float q4 = 1%2;
+	float q5 = (float) (1/2.0);
+	boolean q6 = (((10/2) % 6) < 5) && (3<2);
+	boolean q7 = !(2<3);
+	double q8 = Math.pow(5, 2)+ 3;
+	
+	System.out.println(q1);
+	System.out.println(q2);
+	System.out.println(q3);
+	System.out.println(q4);
+	System.out.println(q5);
+	System.out.println(q6);
+	System.out.println(q7);
+	System.out.println(q8);
+}
+
+/** Escreva um problema que leia três números inteiros A, B, C e calcula a seguinte expressão:
+ * d = (r + s)/2 , onde r = (a + b)² e s = (b + c)².
+ */
+public static void exercicio24() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite três número inteiros:");
+	int a = sc.nextInt();
+	int b = sc.nextInt();
+	int c = sc.nextInt();
+	
+	int r = (int) Math.pow((a+b), 2);
+	int s = (int) Math.pow((b+c), 2);
+	
+	int d = (r + s)/2;
+	System.out.println(d);
+	
+	sc.close();
+}
+
+public static void exercicio25() {
+	
+}
+
+public static void exercicio26() {
+	
+}
+
+public static void exercicio27() {
+	
+}
+
+public static void exercicio28() {
+	
+}
+
+public static void exercicio29() {
+	
+}
+
+public static void exercicio30() {
+	
+}
+
+
+
+
+
 }
