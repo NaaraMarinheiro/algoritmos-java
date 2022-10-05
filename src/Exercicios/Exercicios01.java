@@ -19,16 +19,16 @@ public class Exercicios01 {
 		//exercicio9();
 		//exercicio10();
 		//exercicio11();
-		//exercicio12(); // Pendente 
-		//exercicio13(); // Pendente
+		//exercicio12();
+		exercicio13(); // Pendente
 		//exercicio14(); // Pendente
 		//exercicio15();
 		//exercicio16();
 		//exercicio17();
 		//exercicio18();
 		//exercicio19();
-		//exercicio20(); // Pendente /PA
-		//exercicio21(); // Pendente/PG
+		//exercicio20(); 
+		//exercicio21();
 		//exercicio22();
 		//exercicio23();
 		//exercicio24();
@@ -249,8 +249,8 @@ public static void exercicio11() {
  * O salário bruto teve um reajuste de 38%;
  * O funcionário receberá uma gratificação de 20% do salário bruto;
  * O salário total é descontado em 15%.
- * Faça um programa para: 1. Imprimir a matrícula; 2. Clacular e imprimir o salário bruto;
- * 3. Clacular e imprimir o salário liquido.
+ * Faça um programa para: 1. Imprimir a matrícula; 2. Calcular e imprimir o salário bruto;
+ * 3. Calcular e imprimir o salário liquido.
  */
 public static void exercicio12() { // NÃO CONSEGUI FAZ 
 	Scanner sc = new Scanner(System.in);
@@ -259,12 +259,12 @@ public static void exercicio12() { // NÃO CONSEGUI FAZ
 	int idade = sc.nextInt();
 	double salarioBruto = sc.nextDouble();
 
-	double percentualReajuste = (38/100) * salarioBruto;
+	double percentualReajuste = (38f/100f) * salarioBruto;
 	double salarioReajustado =  salarioBruto + percentualReajuste;
-	double gratificacao = (20/100) * salarioReajustado;
+	double gratificacao = 0.2 * salarioReajustado;
 	double salarioBrutoFinal = salarioReajustado + gratificacao;
 	
-	double salarioDescontado = salarioBrutoFinal - ((15/100) * salarioBrutoFinal);
+	double salarioDescontado = salarioBrutoFinal - ((0.15) * salarioBrutoFinal);
 	
 	System.out.println("Matricula: " + matricula);
 	System.out.println("Salário Bruto: " + salarioBrutoFinal);
@@ -272,7 +272,6 @@ public static void exercicio12() { // NÃO CONSEGUI FAZ
 
 	sc.close();
 	
-	// NÃO CONSEGUI FAZER O PERCENTUAL FUNCIONAR.
 }
 
 
@@ -284,6 +283,16 @@ vendidos e o valor total das vendas. Elabore um algoritmo para calcular e imprim
 vendedor num dado mes.
  */
 public static void exercicio13() {
+//	Scanner sc = new Scanner(System.in);
+//	int ncarros;
+//	
+//	double salario = 2000.0;
+//	double comissão = nCarros * 500;
+//	double percentualVenda = 0.5 * valorDoCarro;
+//	
+//	
+//	}
+//	
 	
 }
 
@@ -383,7 +392,15 @@ public static void exercicio19() {
  * Fórmula geral da PA an = a1 + (n - 1) r 
  */
 public static void exercicio20() {
+	Scanner sc =  new Scanner(System.in);
+	System.out.println("Informe os termos a1, r e n de uma PA:");
+	int a1 = sc.nextInt();
+	int r = sc.nextInt();
+	int n = sc.nextInt();
 	
+	int PA = a1 + (n - 1) * r;
+	System.out.println(PA);
+	sc.close();
 }
 
 /** Desenvolva um algoritmo que leia um número n, o primeiro termo a1, e a razão q de uma
@@ -391,7 +408,15 @@ public static void exercicio20() {
  * Fórmula geral da PG : an = a1 x q^n-1
  */
 public static void exercicio21() {
+	Scanner sc =  new Scanner(System.in);
+	System.out.println("Informe os termos a1, q e n de uma PG:");
+	double a1 = sc.nextDouble();
+	double q = sc.nextDouble();
+	double n = sc.nextDouble();
 	
+	double PG = a1 * Math.pow(q, n-1);
+	System.out.println(PG);
+	sc.close();
 }
 
 /** Reescreva as expressões matemáticas abaixo em linguagem Java:
@@ -436,7 +461,7 @@ public static void exercicio23() {
 	boolean q2 = (6<8)||(3>7);
 	float q3 = 1/2;
 	float q4 = 1%2;
-	float q5 = (float) (1/2.0);
+	float q5 = (1f/2.0f);
 	boolean q6 = (((10/2) % 6) < 5) && (3<2);
 	boolean q7 = !(2<3);
 	double q8 = Math.pow(5, 2)+ 3;
@@ -470,28 +495,139 @@ public static void exercicio24() {
 	sc.close();
 }
 
+/** Elabore um algoritmo que leia 2 valores e verifique se um é divisível pelo outro.
+ */
 public static void exercicio25() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Escreva dois números inteiros:");
+	int n1 = sc.nextInt();
+	int n2 = sc.nextInt();
 	
+	if (n1 % n2 == 0) {
+		System.out.println(" É divisível");	
+	} else {
+		System.out.println(" Não é divisível");
+	}
+	sc.close();
 }
 
+/**
+ * Faça um programa que, dados a matrícula (somente npumeros) e salário de dois funcionários,
+ *  imprima a matricula e o salário do funcionário que tem maior salário
+ */
 public static void exercicio26() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Primeiro funcionário, matricula e salario:");
+	int matriculaf1 = sc.nextInt();
+	double salariof1 = sc.nextDouble();
+	System.out.println("Segundo funcionário, matricula e salario:");
+	int matriculaf2 = sc.nextInt();
+	double salariof2 = sc.nextDouble();
 	
+	if (salariof1 > salariof2) {
+		System.out.println(matriculaf1);	
+	} else {
+		System.out.println(matriculaf2);
+	}
+	sc.close();
 }
 
+/** Uma loja deseja mandar uma corresponência a um dos clientes anunciando um bônus especial.
+ * Escreva um algoritmo que leia o valor das compras desse cliente no ano passado e calcule
+ * um bônus de 10%, se o valor das compras for menor que R$ 50.000,00, e de 15%, 
+ * caso contrário. O algoritmo deve imprimir o bônus cedido ao cliente. 
+ * 
+ */
 public static void exercicio27() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Qual o valor das compras do cliente?");
+	double valorCompras = sc.nextDouble();
 	
+	if (valorCompras < 50000.0) { 
+		System.out.println("Bônus de 10%");
+	} else {
+		System.out.println("Bônus de 15%");
+	}
+	sc.close();
 }
 
+/** Faça um programa que leia a matrícula (somente números), o cargo (uma letra) e
+ * e o salário de um funcionário e calcule seu novo salário reajustado.
+ * Se o cargo for operador (O), o funcionário deverá receber um reajuste de 20%,
+ * se o cargo for programador (P), o funcionário deverá receber um reajuste de 18%.
+ * O programa deve escrever a matrícula e o novo salário do funcionário, já reajustado.
+ * 
+ */
 public static void exercicio28() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Informe a matricula, o cargo (uma letra) e o salario:");
+	int matricula = sc.nextInt();
+	char cargo = sc.next().charAt(0);
+	double salario = sc.nextDouble();
+	
+	if ( cargo == 'O') {
+		double novoSalario = (salario * 0.20) + salario;
+		System.out.printf("Matricula %d , novo salário R$ %.2f ", matricula, novoSalario);
+	} else {
+		double novoSalario = (salario * 0.18) + salario;
+		System.out.printf("Matricula %d , novo salário R$ %.2f ", matricula, novoSalario);
+	}
+	sc.close();
 	
 }
-
+/** Elabore um programa que leia o salario atual de um funcionario de uma firma 
+ * e calcule e imprima o novo salario com percentual de reajuste dependendo do 
+ * salario atual conforme a seguinte tabela:
+ * - salario atual menor que 1000,0 - reajuste 15%
+ * - salario atual maior ou igual a 1000,0 e maior ou igual a 2000,00 - reajuste 10%
+ * - salario atual maior que 2000,0 - reajuste 5%
+ */
 public static void exercicio29() {
-	
-}
+	Scanner sc = new Scanner (System.in);
+	System.out.println("Digite o salário:");
+	double salario =sc.nextDouble();
+	if ( salario < 1000.0) {
+		double novoSalario = (0.15 * salario) + salario;
+		System.out.println("Novo salário :R$" + novoSalario);
+	} else if ( salario > 2000.0) {
+		double novoSalario = (0.05 * salario) + salario;
+		System.out.println("Novo salário :R$" + novoSalario);
+	} else {
+		double novoSalario = (0.10 * salario) + salario;
+		System.out.println("Novo salário :R$" + novoSalario);
+	}
 
+	sc.close();
+}
+/** Faça um programa que, dados dois numeros e um caracter ( +, -, *, /), calcule e imprima:
+ * 1. A soma desses números, caso seja digitado o caracter +
+ * 2. A subtração dos dois numeros, caso seja digitado o caracter -
+ * 3. A multiplicação desses números, caso seja digitado o caracter *
+ * 4. A divisão desses números, caso seja digitado o caracter /
+ */
 public static void exercicio30() {
+	Scanner sc = new Scanner (System.in);
+	int n1 = 10;
+	int n2 = 5;
+	System.out.println("Escolha uma operação:");
+	char operador = sc.next().charAt(0);
 	
+	if ( operador == '+') {
+		int result = n1 + n2;
+		System.out.println(result);
+	} else if ( operador == '-') {
+		int result = n1 - n2;
+		System.out.println(result);
+	} else if ( operador == '*') {
+		int result = n1 * n2;
+		System.out.println(result);
+	} else if ( operador == '/') {
+		int result = n1 / n2;
+		System.out.println(result);
+	} else {
+		System.out.println("Operador inválido");
+	}
+	sc.close();
 }
 
 
