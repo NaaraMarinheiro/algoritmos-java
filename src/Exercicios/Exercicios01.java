@@ -20,7 +20,7 @@ public class Exercicios01 {
 		//exercicio10();
 		//exercicio11();
 		//exercicio12();
-		exercicio13(); // Pendente
+		//exercicio13(); // Pendente
 		//exercicio14(); // Pendente
 		//exercicio15();
 		//exercicio16();
@@ -37,7 +37,12 @@ public class Exercicios01 {
 		//exercicio27();
 		//exercicio28();
 		//exercicio29();
-		//exercicio30();
+		//exercicio30(); 
+		//exercicio31();
+		//exercicio32();
+		//exercicio33();
+		//exercicio34();
+		//exercicio35(); q9 - lista 2
 	}
 
 /** 1. Elabore um programa que lê o valor das variáveis x, y e z, do tipo int.
@@ -629,6 +634,152 @@ public static void exercicio30() {
 	}
 	sc.close();
 }
+
+/** Crie um programa que lê o conceito de um aluno na disciplina e imprime seu significado,
+ *  de acordo com a tabela abaixo. Caso seja informado um conceito inexistente, deve ser exibida
+ *  uma mensagem de erro.
+ *   A - exceelente, B - ótimo, C - bom , D - regular, E - ruim, F - péssimo. 
+ */
+public static void exercicio31() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite o conceito do aluno (letra maiúscula):");
+	char conceito = sc.next().charAt(0);
+	String retorno;
+	
+	switch (conceito) {
+	case 'A':
+		retorno = "Excelente";
+		break;
+	case 'B':
+		retorno = "Ótimo";
+		break;
+	case 'C':
+		retorno = "Bom";
+		break;
+	case 'D':
+		retorno = "Regular";
+		break;
+	case 'E':
+		retorno = "Ruim";
+		break;
+	case 'F':
+		retorno = "Péssimo";
+		break;
+	default:
+		retorno = "Conceito inválido";
+		break;
+	}
+	System.out.println("Conceito: " + retorno);
+	sc.close();
+}
+
+
+/** Escreva um programa que leia o código de um determinado produto e mostre a sua classificação.
+ *  Utilize a tabela abaixo como referência:
+ *  1 - Alimento não-perecível
+ *  2 - Alimento perecível
+ *  3 - Vestuário
+ *  4 - Limpeza
+ */
+public static void exercicio32() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite o código do produto:");
+	int codigo = sc.nextInt();
+	String classe;
+	
+	switch (codigo) {
+	case 1:
+		classe = "Alimento não-perecivel";
+		break;
+	case 2:
+		classe = "Alimento perecível";
+		break;
+	case 3:
+		classe = "Vestuário";
+		break;
+	case 4:
+		classe = "Limpeza";
+		break;
+	default:
+		classe = "Código inválido";
+		break;
+	}
+	
+	System.out.println("Classe do produto: " + classe);
+	sc.close();	
+}
+
+/** Dada uma letra, escreva na tela se essa letra é uma vogal ou consoante
+ * (considerar apenas letras minusculas).
+ */
+public static void exercicio33() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite uma letra minúscula:");
+	char letra = sc.next().charAt(0);
+	String classe;
+	
+	switch (letra) {
+	case 'a':
+	case 'e':
+	case 'i':
+	case 'o':
+	case 'u':
+		classe = "vogal";
+		break;
+	default:
+		classe = "consoante";
+		break;
+	}
+	System.out.println("A letra é uma " + classe);
+	sc.close();
+}
+
+/** Escreva um programa que indique o número de dias existentes em um mÊs.
+ * Número de dias 28 - mÊs 02
+ * Número de dias 30 - mês 04, 06, 09, 11
+ * Número de dias 31 - mês 01, 03, 05, 07, 08, 10, 12
+ */
+public static void exercicio34() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite o mês:");
+	int mes = sc.nextInt();
+	
+	switch (mes) {
+	case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+		System.out.println("O mês tem 31 dias");
+		break;
+	case 4: case 6: case 9: case 11:
+		System.out.println("O mês tem 30 dias");
+		break;
+	case 2:
+		System.out.println("O mês tem 28 dias");
+		break;
+	default:
+		System.out.println("Mês inválido");
+		break;
+	}
+	sc.close();
+}
+
+/** Faça um programa que leia a matrícula e as tres notas de uma disciplina
+ *  de um determinado aluno e ao final escreva a matricula deste aluno,
+ *  sua media e se ele foi aprovado (media maior ou igual a 6).
+ */
+public static void exercicio35() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Digite a matricula e as três notas:");
+	int matricula = sc.nextInt();
+	int n1 = sc.nextInt();
+	int n2 = sc.nextInt();
+	int n3 = sc.nextInt();
+	int media = (n1 + n2 + n3)/3;
+	String resultado = (media >= 6) ? "aprovado" : "reprovado";
+	System.out.printf("Matricula: %d , média: %d , resultado %s " ,matricula, media, resultado);
+	sc.close();
+}
+
+
+
 
 
 
